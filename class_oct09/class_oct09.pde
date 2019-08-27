@@ -61,7 +61,8 @@ void draw() {
         if( dropX[i] > mouseX - (bucketWidth/2) &&
             dropX[i] < mouseX + (bucketWidth/2) ) {
               println("score");
-    // figure out reset here
+              dropY[i] = -random(0,600);
+              dropX[i] = random(0,width);
            }
        }
     }
