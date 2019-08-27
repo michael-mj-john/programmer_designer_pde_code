@@ -9,8 +9,8 @@ float dropRadius;
 static final int DROPCOUNT = 5;
 
 /* Add these lines as parameters for the "bucket" */
-//static final float bucketHeight = 50;
-//static final float bucketWidth = 50;
+static final float bucketHeight = 50;
+static final float bucketWidth = 50;
 
 float[] dropY = new float[DROPCOUNT];
 boolean dropActive[] = new boolean[DROPCOUNT]; // note: in java boolean array defaults to FALSE
@@ -23,7 +23,7 @@ void setup() {
   size( 800, 600 );
   background( 128 );
   noStroke();
-//  rectMode(CENTER); /* this makes collision and control much easier */
+  rectMode(CENTER); /* this makes collision and control much easier */
   dropRadius = 30;
   speed = 3;
   
@@ -53,15 +53,17 @@ void draw() {
   }
   
     /* bucket draw */ 
-//  rect( mouseX, height-(bucketHeight/2), bucketWidth, bucketHeight );
+    rect( mouseX, height-(bucketHeight/2), bucketWidth, bucketHeight );
     
     /* bucket collision test */
-  //if( dropY > height - bucketHeight ) {
-  //  if( dropX > mouseX - (bucketWidth/2) &&
-  //      dropX < mouseX + (bucketWidth/2) ) {
-  //        println("score");
-  //     }
-  // }
-   
+    for( int i=0; i<DROPCOUNT; i++ ) {
+      if( dropY[i] > (height - bucketHeight) ) {
+        if( dropX[i] > mouseX - (bucketWidth/2) &&
+            dropX[i] < mouseX + (bucketWidth/2) ) {
+              println("score");
+    // figure out reset here
+           }
+       }
+    }
  
 }
