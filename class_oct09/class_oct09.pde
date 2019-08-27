@@ -8,6 +8,7 @@ float dropRadius;
 
 static final int DROPCOUNT = 5;
 
+/* Add these lines as parameters for the "bucket" */
 //static final float bucketHeight = 50;
 //static final float bucketWidth = 50;
 
@@ -22,7 +23,7 @@ void setup() {
   size( 800, 600 );
   background( 128 );
   noStroke();
-//  rectMode(CENTER);
+//  rectMode(CENTER); /* this makes collision and control much easier */
   dropRadius = 30;
   speed = 3;
   
@@ -51,14 +52,16 @@ void draw() {
     }
   }
   
-    //bucket 
+    /* bucket draw */ 
 //  rect( mouseX, height-(bucketHeight/2), bucketWidth, bucketHeight );
-/*  if( dropY > height - bucketHeight ) {
-    if( dropX > mouseX - (bucketWidth/2) &&
-        dropX < mouseX + (bucketWidth/2) ) {
-          println("score");
-       }
-   }
-*/   
+    
+    /* bucket collision test */
+  //if( dropY > height - bucketHeight ) {
+  //  if( dropX > mouseX - (bucketWidth/2) &&
+  //      dropX < mouseX + (bucketWidth/2) ) {
+  //        println("score");
+  //     }
+  // }
+   
  
 }
